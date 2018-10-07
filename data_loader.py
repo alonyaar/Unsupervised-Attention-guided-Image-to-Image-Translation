@@ -33,7 +33,7 @@ def _load_samples(csv_name, image_type):
     return image_decoded_A, image_decoded_B
 
 
-def load_data(dataset_name, image_size_before_crop,
+def load_data(dataset_name, image_size_w, image_size_h=0,
               do_shuffle=True, do_flipping=False):
     """
 
@@ -55,12 +55,12 @@ def load_data(dataset_name, image_size_before_crop,
         'image_i': image_i,
         'image_j': image_j
     }
-
+    image_size_h = image_size_w if image_size_h == 0 else image_size_h
     # Preprocessing:
     inputs['image_i'] = tf.image.resize_images(
-        inputs['image_i'], [image_size_before_crop, image_size_before_crop])
+        inputs['image_i'], [image_size_w, image_size_h])
     inputs['image_j'] = tf.image.resize_images(
-        inputs['image_j'], [image_size_before_crop, image_size_before_crop])
+        inputs['image_j'], [image_size_w, image_size_h])
 
     if do_flipping is True:
         inputs['image_i'] = tf.image.random_flip_left_right(inputs['image_i'])
