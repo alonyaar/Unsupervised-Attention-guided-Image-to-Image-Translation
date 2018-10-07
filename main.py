@@ -372,7 +372,7 @@ class CycleGAN:
         # Load Dataset from the dataset folder
         self.inputs = data_loader.load_data(
             self._dataset_name, self._size_before_crop,
-            True, self._do_flipping)
+            True, self._do_flipping, do_cropping=False)
 
         # Build the network
         self.model_setup()

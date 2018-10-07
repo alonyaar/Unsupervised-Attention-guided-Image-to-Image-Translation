@@ -34,7 +34,7 @@ def _load_samples(csv_name, image_type):
 
 
 def load_data(dataset_name, image_size_w, image_size_h=0,
-              do_shuffle=True, do_flipping=False):
+              do_shuffle=True, do_flipping=False, do_cropping=True):
     """
 
     :param dataset_name: The name of the dataset.
@@ -65,11 +65,11 @@ def load_data(dataset_name, image_size_w, image_size_h=0,
     if do_flipping is True:
         inputs['image_i'] = tf.image.random_flip_left_right(inputs['image_i'])
         inputs['image_j'] = tf.image.random_flip_left_right(inputs['image_j'])
-
-    inputs['image_i'] = tf.random_crop(
-        inputs['image_i'], [model.IMG_HEIGHT, model.IMG_WIDTH, 3])
-    inputs['image_j'] = tf.random_crop(
-        inputs['image_j'], [model.IMG_HEIGHT, model.IMG_WIDTH, 3])
+    if do_cropping:
+        inputs['image_i'] = tf.random_crop(
+            inputs['image_i'], [model.IMG_HEIGHT, model.IMG_WIDTH, 3])
+        inputs['image_j'] = tf.random_crop(
+            inputs['image_j'], [model.IMG_HEIGHT, model.IMG_WIDTH, 3])
 
     inputs['image_i'] = tf.subtract(tf.div(inputs['image_i'], 127.5), 1)
     inputs['image_j'] = tf.subtract(tf.div(inputs['image_j'], 127.5), 1)
