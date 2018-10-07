@@ -65,7 +65,7 @@ def load_data(dataset_name, image_size_w, image_size_h=0,
     if do_flipping is True:
         inputs['image_i'] = tf.image.random_flip_left_right(inputs['image_i'])
         inputs['image_j'] = tf.image.random_flip_left_right(inputs['image_j'])
-    if do_cropping:
+    if do_cropping is True:
         inputs['image_i'] = tf.random_crop(
             inputs['image_i'], [model.IMG_HEIGHT, model.IMG_WIDTH, 3])
         inputs['image_j'] = tf.random_crop(
