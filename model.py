@@ -8,10 +8,10 @@ import layers
 BATCH_SIZE = 1
 
 # The height of each image.
-IMG_HEIGHT = 392
+IMG_HEIGHT = 152
 
 # The width of each image.
-IMG_WIDTH = 152
+IMG_WIDTH = 392
 
 # The number of color channels per image.
 IMG_CHANNELS = 3
