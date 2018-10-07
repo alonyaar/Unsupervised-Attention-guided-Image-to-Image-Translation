@@ -15,6 +15,7 @@ DATASET_TO_SIZES = {
     'lion2tiger_test': 103,
     'summer2winter_yosemite_train': 1231,
     'summer2winter_yosemite_test': 309,
+    'blackBG': 709
 }
 
 """The image types of each dataset. Currently only supports .jpg or .png"""
@@ -31,6 +32,7 @@ DATASET_TO_IMAGETYPE = {
     'lion2tiger_test': '.jpg',
     'summer2winter_yosemite_train': '.jpg',
     'summer2winter_yosemite_test': '.jpg',
+    'blackBG': '.png'
 }
 
 """The path to the output csv file."""
@@ -46,5 +48,6 @@ PATH_TO_CSV = {
     'lion2tiger_train': './input/lion2tiger/lion2tiger_train.csv',
     'lion2tiger_test': './input/lion2tiger/lion2tiger_test.csv',
     'summer2winter_yosemite_train': './input/summer2winter_yosemite/summer2winter_yosemite_train.csv',
-    'summer2winter_yosemite_test': './input/summer2winter_yosemite/summer2winter_yosemite_test.csv'
+    'summer2winter_yosemite_test': './input/summer2winter_yosemite/summer2winter_yosemite_test.csv',
+    'blackBG': 'blackBG.csv'
 }
