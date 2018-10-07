@@ -26,8 +26,8 @@ class CycleGAN:
 
         self._pool_size = pool_size
         self._size_before_crop = 286
-        self._size_before_crop_w = 152
-        self._size_before_crop_h = 392
+        self._size_before_crop_w = 392
+        self._size_before_crop_h = 152
         self._lambda_a = lambda_a
         self._lambda_b = lambda_b
         self._output_dir = os.path.join(output_root_dir, current_time)
